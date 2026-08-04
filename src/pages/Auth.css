@@ -1,0 +1,147 @@
+/* src/pages/Auth.css */
+.auth-page-container {
+  background: linear-gradient(135deg, #6b4d8e 0%, #8b76aa 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.auth-logo-header {
+  color: #1a103c;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+}
+
+.auth-logo-icon {
+  background-color: #6b4c9a;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.auth-title {
+  color: #1a103c;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.auth-subtitle {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Toggle Buttons */
+.auth-toggle-container {
+  display: flex;
+  background-color: #f5f3ff;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 25px;
+}
+
+.auth-toggle-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.auth-toggle-btn.active {
+  background-color: white;
+  color: #1a103c;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.auth-toggle-btn.inactive {
+  background-color: transparent;
+  color: #6b7280;
+  box-shadow: none;
+}
+
+/* Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form-group label {
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a103c;
+}
+
+.auth-form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.auth-form-group input:focus {
+  border-color: #6b4d8e;
+}
+
+.btn-auth-submit {
+  background: linear-gradient(135deg, #6b4d8e 0%, #8b76aa 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+
+.btn-auth-submit:hover {
+  opacity: 0.9;
+}
+
+.auth-back-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-back-link a {
+  color: #6b7280;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.auth-back-link a:hover {
+  color: #1a103c;
+}

@@ -1,0 +1,145 @@
+/* src/pages/Profile.css */
+
+.profile-page-wrapper {
+  background-color: #fdfdff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-logout {
+  border: none;
+  background: transparent;
+  color: #ef4444; /* Red color */
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.btn-logout:hover {
+  opacity: 0.8;
+}
+
+.profile-content-wrapper {
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+/* User Info Header */
+.profile-header {
+  background-color: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.profile-info-flex {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #f5f3ff;
+  color: #6b4c9a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.profile-name {
+  color: #1a103c;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.profile-email {
+  color: #6b7280;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+/* Complaints Section */
+.complaints-section {
+  margin-top: 50px;
+}
+
+.complaints-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.complaints-title {
+  color: #1a103c;
+  font-size: 22px;
+}
+
+.complaints-badge {
+  background-color: #f5f3ff;
+  color: #6b4c9a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Complaint Card */
+.complaint-list-card {
+  background-color: white;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 20px 25px;
+  transition: 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.complaint-list-card:hover {
+  border-color: #d8b4fe;
+  box-shadow: 0 4px 12px rgba(107, 76, 154, 0.05);
+}
+
+.complaint-card-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.complaint-item-title {
+  color: #111827;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.complaint-item-meta {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+.complaint-status-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}

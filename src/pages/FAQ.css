@@ -1,0 +1,71 @@
+/* src/pages/FAQ.css */
+
+.faq-page-wrapper {
+  background-color: #fdfdff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-content-wrapper {
+  flex: 1;
+}
+
+.faq-header-container {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.faq-header-title {
+  color: #1a103c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.faq-header-icon {
+  background-color: #6b4c9a;
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.faq-list-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.faq-item {
+  padding: 15px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Yeh automatically last question ka border hata dega */
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-weight: 500;
+  color: #1a103c;
+  outline: none;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+}
