@@ -40,7 +40,7 @@ export default function FileComplaint() {
     }
 
     try {
-      const response = await fetch('https://localfix-backend-tbuf.onrender.com', {
+      const response = await fetch('https://localfix-backend-tbuf.onrender.com/complaints', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`, 

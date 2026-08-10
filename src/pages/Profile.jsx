@@ -28,7 +28,7 @@ export default function Profile() {
     try {
       const token = localStorage.getItem('token');
       
-      const response = await fetch("https://localfix-backend-tbuf.onrender.com", {
+      const response = await fetch("https://localfix-backend-tbuf.onrender.com/my-complaints", {
         method: "GET",
         headers: {
           'Content-Type': 'application/json',
