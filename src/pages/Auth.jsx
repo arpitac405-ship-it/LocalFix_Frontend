@@ -9,22 +9,18 @@ export default function Auth() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  // 🌟 NAYA CODE: REAL-WORLD LOGIC 🌟
-  // Agar user pehle se login hai (token hai), toh usko wapas Profile par bhej do
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // replace: true se browser ki history aage badh jati hai, 
-      // jisse back button dabane par user loop mein nahi fanstaa.
       navigate('/profile', { replace: true }); 
     }
   }, [navigate]);
 
-  // POST request example (Register)
+  // POST request (Register)
   async function registerUser() {
     try {
       const response = await fetch(
-        "http://localhost:4000/register", 
+        "https://localfix-backend-tbuf.onrender.com", 
         {
           method: "POST",
           headers: {
@@ -43,7 +39,6 @@ export default function Auth() {
       
       if (response.ok) {
         localStorage.setItem('civicfix_user', JSON.stringify(data.user));
-        // ⚠️ NAYI LINE: Token yahan save hoga
         localStorage.setItem('token', data.token); 
         navigate('/profile');
       } else {
@@ -55,11 +50,11 @@ export default function Auth() {
     }
   }
 
-  // POST request example (Login)
+  // POST request Login
   async function loginUser() {
     try {
       const response = await fetch(
-        "http://localhost:4000/login",
+        "https://localfix-backend-tbuf.onrender.com",
         {
           method: "POST",
           headers: {

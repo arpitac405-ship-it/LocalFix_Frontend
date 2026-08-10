@@ -29,28 +29,24 @@ export default function FileComplaint() {
       return;
     }
 
-    // 2. FormData banayein (JSON ki jagah)
     const formData = new FormData();
     formData.append('category', category);
     formData.append('title', title);
     formData.append('description', description);
-    formData.append('location', 'Not specified'); // Backend expect kar raha hai
+    formData.append('location', 'Not specified'); 
     
-    // Agar user ne photo select ki hai, tabhi usko form mein jodein (Optional)
     if (imageFile) {
       formData.append('image', imageFile); 
     }
 
     try {
-      const response = await fetch('http://localhost:4000/complaints', {
+      const response = await fetch('https://localfix-backend-tbuf.onrender.com', {
         method: 'POST',
         headers: {
-          // ⚠️ DHYAN DEIN: Yahan 'Content-Type': 'application/json' NAHI likhna hai.
-          // Browser image aur text ke liye isko khud automatically handle karega.
           'Authorization': `Bearer ${token}`, 
-          'token': token // Aapke middleware ke hisaab se
+          'token': token
         },
-        body: formData, // JSON.stringify() ki jagah direct formData bhejenge
+        body: formData, 
       });
 
       const data = await response.json();
@@ -73,7 +69,7 @@ export default function FileComplaint() {
   return (
     <div style={{ backgroundColor: '#fdfdff', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       
-      {/* Navbar (Uses shared classes from index.css) */}
+      {/* Navbar */}
       <nav className="navbar">
         <div className="nav-container">
           <div className="logo-group">
@@ -98,7 +94,7 @@ export default function FileComplaint() {
               <label>Category</label>
               <select required value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Select an issue...</option>
-                {/* ⚠️ Values ko Prisma schema ke exact ENUM (CAPITAL LETTERS) se match kiya hai */}
+                
                 <option value="STREETLIGHT">Streetlight</option>
                 <option value="GARBAGE">Garbage</option>
                 <option value="POTHOLE">Pothole</option>
