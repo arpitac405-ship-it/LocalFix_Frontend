@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Contact.css'; // <-- CSS Import
+import './Contact.css'; 
 
 export default function Contact() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

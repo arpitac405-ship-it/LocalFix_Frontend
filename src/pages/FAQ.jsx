@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './FAQ.css'; // <-- CSS Import
+import './FAQ.css'; 
 
 export default function FAQ() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

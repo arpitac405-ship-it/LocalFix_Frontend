@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './FileComplaint.css'; // <-- CSS import
+import './FileComplaint.css'; 
 
 export default function FileComplaint() {
   const navigate = useNavigate();
@@ -22,18 +22,52 @@ export default function FileComplaint() {
   const handleComplaintSubmit = async (e) => {
     e.preventDefault();
 
+    // 1. Token check karein
+    const token = localStorage.getItem('token');
+    if (!token) {
+      alert("Please login first to file a complaint!");
+      return;
+    }
+
+    // 2. FormData banayein (JSON ki jagah)
     const formData = new FormData();
     formData.append('category', category);
     formData.append('title', title);
     formData.append('description', description);
+    formData.append('location', 'Not specified'); // Backend expect kar raha hai
     
+    // Agar user ne photo select ki hai, tabhi usko form mein jodein (Optional)
     if (imageFile) {
       formData.append('image', imageFile); 
     }
 
-    console.log("Complaint Submitted (Frontend Only):", { category, title, description, imageFile });
-    alert("Complaint filed successfully! (Frontend check)");
-    navigate('/profile');
+    try {
+      const response = await fetch('http://localhost:4000/complaints', {
+        method: 'POST',
+        headers: {
+          // ⚠️ DHYAN DEIN: Yahan 'Content-Type': 'application/json' NAHI likhna hai.
+          // Browser image aur text ke liye isko khud automatically handle karega.
+          'Authorization': `Bearer ${token}`, 
+          'token': token // Aapke middleware ke hisaab se
+        },
+        body: formData, // JSON.stringify() ki jagah direct formData bhejenge
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Complaint saved:", data);
+        alert("Complaint filed successfully!");
+        navigate('/profile'); 
+      } else {
+        console.error("Failed to file complaint:", data);
+        alert("Error: " + (data.error || "Failed to submit"));
+      }
+      
+    } catch (error) {
+      console.error("Server error:", error);
+      alert("Server error. Please check your backend.");
+    }
   };
 
   return (
@@ -64,12 +98,13 @@ export default function FileComplaint() {
               <label>Category</label>
               <select required value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Select an issue...</option>
-                <option value="Streetlight">Streetlight</option>
-                <option value="Garbage">Garbage</option>
-                <option value="Pothole">Pothole</option>
-                <option value="Water Leakage">Water Leakage</option>
-                <option value="Drainage">Drainage</option>
-                <option value="Other">Other</option>
+                {/* ⚠️ Values ko Prisma schema ke exact ENUM (CAPITAL LETTERS) se match kiya hai */}
+                <option value="STREETLIGHT">Streetlight</option>
+                <option value="GARBAGE">Garbage</option>
+                <option value="POTHOLE">Pothole</option>
+                <option value="WATER_LEAKAGE">Water Leakage</option>
+                <option value="DRAINAGE">Drainage</option>
+                <option value="OTHER">Other</option>
               </select>
             </div>
 

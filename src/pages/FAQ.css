@@ -1,4 +1,4 @@
-/* src/pages/FAQ.css */
+
 
 .faq-page-wrapper {
   background-color: #fdfdff;
@@ -52,7 +52,7 @@
   border-bottom: 1px solid #f0f0f0;
 }
 
-/* Yeh automatically last question ka border hata dega */
+
 .faq-item:last-child {
   border-bottom: none;
 }
