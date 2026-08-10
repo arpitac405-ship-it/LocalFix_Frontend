@@ -22,7 +22,7 @@ export default function FileComplaint() {
   const handleComplaintSubmit = async (e) => {
     e.preventDefault();
 
-    // 1. Token check karein
+    // 1. Token check
     const token = localStorage.getItem('token');
     if (!token) {
       alert("Please login first to file a complaint!");
@@ -76,7 +76,7 @@ export default function FileComplaint() {
             <div className="logo-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
-            <Link to="/" style={{ textDecoration: 'none' }}><h2 className="logo-text">CivicFix</h2></Link>
+            <Link to="/" style={{ textDecoration: 'none' }}><h2 className="logo-text">LocalFix</h2></Link>
           </div>
           <Link to="/" style={{ textDecoration: 'none', color: '#6b7280', fontWeight: '500', fontSize: '14px' }}>← Back to Home</Link>
         </div>
