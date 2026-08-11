@@ -54,11 +54,18 @@
   line-height: 1.6;
 }
 
-
-.hero-buttons {
+  .hero-buttons {
     flex-direction: column !important;
-    align-items: flex-start !important; 
+    align-items: flex-start !important;
     gap: 15px !important;
+    width: 100% !important;
+  }
+
+  .hero-buttons a,
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    width: fit-content !important;      
+    align-self: flex-start !important;  
   }
 
 .btn-primary {
@@ -236,43 +243,39 @@
 
 @media (max-width: 768px) {
   
-  
   .navbar .nav-container {
     display: flex !important;
-    flex-direction: column !important; 
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important; 
     align-items: center !important;
-    justify-content: center !important;
-    padding: 15px !important;
-    gap: 15px !important;
+    padding: 10px 20px !important;
   }
   
   .navbar .logo-group {
     order: 1 !important;
-    justify-content: center !important;
-    width: 100% !important;
+    width: auto !important;
   }
   
-  .navbar .nav-links {
+  
+  .navbar .nav-container > a {
     order: 2 !important;
-    width: 100% !important;
+  }
+  
+  
+  .navbar .nav-links {
+    order: 3 !important;
+    flex-basis: 100% !important; 
     justify-content: center !important;
     display: flex !important;
     gap: 25px !important;
-    margin: 0 !important;
-  }
-
-  
-  .navbar .nav-container > a {
-    order: 3 !important;
-    display: flex !important;
-    justify-content: center !important;
+    margin-top: 15px !important;
   }
 
   .navbar .btn-nav-signin {
-    padding: 8px 24px !important;
-    font-size: 14px !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
   }
-
   .hero-title {
     font-size: 2.2rem !important; 
     line-height: 1.2;
