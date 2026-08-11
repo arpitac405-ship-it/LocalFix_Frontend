@@ -209,9 +209,6 @@
   font-size: 14px;
 }
 
-/* =========================================
-   🌟 1. SMOOTH SLIDE-UP ANIMATION 🌟
-   ========================================= */
 @keyframes slideUpFade {
   from {
     opacity: 0;
@@ -224,63 +221,67 @@
 }
 
 .animate-slide-up {
-  opacity: 0; /* Shuru mein chhupa rahega */
+  opacity: 0; 
   animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Animations ko ek-ek karke laane ke liye delays */
+
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.3s; }
 .delay-3 { animation-delay: 0.5s; }
 
-/* =========================================
-   🌟 2. MOBILE RESPONSIVE FIXES 🌟
-   ========================================= */
+
+
+
 @media (max-width: 768px) {
   
-  /* Navbar ko mobile par theek karne ke liye */
   .navbar .nav-container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px 15px;
-    gap: 10px;
+    display: flex !important;
+    flex-direction: row !important; 
+    flex-wrap: wrap !important; 
+    justify-content: space-between !important; 
+    align-items: center !important;
+    padding: 15px 20px !important;
   }
   
-  /* Home, FAQ, Contact links ko center mein laane ke liye */
+  .navbar .logo-group {
+    order: 1 !important;
+  }
+  
+  .navbar .nav-container > a {
+    order: 2 !important;
+  }
+  
   .navbar .nav-links {
-    font-size: 14px;
-    gap: 15px;
-    margin: 10px 0;
-    width: 100%;
-    justify-content: center;
-    display: flex;
+    order: 3 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    display: flex !important;
+    gap: 20px !important;
+    margin-top: 15px !important;
   }
 
-  /* Sign in button ka size thoda theek karne ke liye */
   .navbar .btn-nav-signin {
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
   }
 
-  /* Main Heading ko mobile screen ke hisab se chota karne ke liye */
   .hero-title {
     font-size: 2.2rem !important; 
     line-height: 1.2;
   }
 
-  /* Stats cards aur Buttons ko phone mein ek ke neeche ek lane ke liye */
   .stats-container {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column !important;
+    gap: 15px !important;
   }
 
   .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column !important;
+    gap: 10px !important;
   }
 
-  /* Categories Grid ko mobile par single column karne ke liye */
   .grid-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
