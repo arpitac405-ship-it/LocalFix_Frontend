@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="home-page-wrapper">
       
-      {/* --- UPPER BODY: NAVBAR --- */}
+      {/* --- NAVBAR --- */}
       <nav className="navbar">
         <div className="nav-container">
           <div className="logo-group">
@@ -50,7 +50,6 @@ export default function Home() {
             <Link to="/contact">Contact</Link>
           </div>
           
-          {/* LOGIC: Agar login hai toh Profile button, nahi toh Sign in button */}
           {isLoggedIn ? (
             <Link to="/profile" style={{ textDecoration: 'none' }}>
               <button className="btn-nav-signin">
@@ -76,7 +75,7 @@ export default function Home() {
       </nav>
 
       {/* --- UPPER BODY: HERO SECTION --- */}
-      <div className="hero-section">
+      <div className="hero-section animate-slide-up">
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-badge">
@@ -102,21 +101,24 @@ export default function Home() {
           </div>
 
           <div className="stats-container">
-            <div className="stat-card">
+            {/* 🌟 YAHAN ANIMATION DELAY ADD KIYA HAI 🌟 */}
+            <div className="stat-card animate-slide-up delay-1">
               <div className="stat-header">
                 <h4>TOTAL REPORTS</h4>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
               </div>
               <h2>0</h2>
             </div>
-            <div className="stat-card">
+            
+            <div className="stat-card animate-slide-up delay-2">
               <div className="stat-header">
                 <h4>IN PROGRESS</h4>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
               </div>
               <h2>0</h2>
             </div>
-            <div className="stat-card">
+            
+            <div className="stat-card animate-slide-up delay-3">
               <div className="stat-header">
                 <h4>RESOLVED</h4>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>

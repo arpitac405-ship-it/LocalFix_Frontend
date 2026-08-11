@@ -98,7 +98,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="contact-form-card">
+        <div className="contact-form-card animate-slide-up delay-2">
           <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div className="form-row">
               <div className="form-group">
