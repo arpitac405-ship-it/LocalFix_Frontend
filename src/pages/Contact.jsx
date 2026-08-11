@@ -72,7 +72,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 style={{ color: '#1a103c', margin: 0, fontSize: '15px', fontWeight: '600' }}>Email</h4>
-                <p style={{ color: '#6b7280', margin: '4px 0 0 0', fontSize: '14px' }}>hello@civicfix.local</p>
+                <p style={{ color: '#6b7280', margin: '4px 0 0 0', fontSize: '14px' }}>localfix.gmail.com</p>
               </div>
             </div>
 
