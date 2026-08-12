@@ -145,3 +145,32 @@
 .auth-back-link a:hover {
   color: #1a103c;
 }
+
+/* --- SPINNER BUTTON  --- */
+.spinner-icon {
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Halka white border */
+  border-top: 3px solid white; /* Gaadha white top */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.btn-loading-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-auth-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

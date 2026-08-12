@@ -147,8 +147,16 @@ export default function FileComplaint() {
             </div>
 
             
+            {/*LOADING BUTTON */}
             <button type="submit" className="btn-submit-complaint" disabled={isLoading}>
-              {isLoading ? 'Submitting...' : 'Submit Report'}
+              {isLoading ? (
+                <div className="btn-loading-state">
+                  <span className="spinner-icon"></span>
+                  <span>Submitting...</span>
+                </div>
+              ) : (
+                'Submit Report'
+              )}
             </button>
           </form>
 

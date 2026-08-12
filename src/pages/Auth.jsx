@@ -139,8 +139,15 @@ export default function Auth() {
             <label>Password</label>
             <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
           </div>
-          <button type="submit" className="btn-auth-submit">
-            {isLoading ? 'Please wait...' : (isLogin ? 'Sign in' : 'Create account')}
+          <button type="submit" className="btn-auth-submit" disabled={isLoading}>
+            {isLoading ? (
+              <div className="btn-loading-state">
+                <span className="spinner-icon"></span>
+                <span>Please wait...</span>
+              </div>
+            ) : (
+              isLogin ? 'Sign in' : 'Create account'
+            )}
           </button>
         </form>
 

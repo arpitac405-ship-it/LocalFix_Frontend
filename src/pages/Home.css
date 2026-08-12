@@ -54,7 +54,7 @@
   line-height: 1.6;
 }
 
-/* DESKTOP BUTTONS */
+
 .hero-buttons {
   display: flex;
   gap: 15px;
@@ -86,7 +86,7 @@
   font-size: 14px;
 }
 
-/* Stats Cards */
+
 .stats-container {
   display: flex;
   gap: 20px;
@@ -231,9 +231,7 @@
 .delay-3 { animation-delay: 0.5s; }
 
 
-/* =======================================
-   📱 MOBILE VIEW (768px se choti screen)
-   ======================================= */
+
 @media (max-width: 768px) {
   
   /* Navbar */
@@ -275,7 +273,7 @@
     line-height: 1.2;
   }
 
-  /* 🌟 BUTTONS FIX - EXACTLY LIKE PHOTO 🌟 */
+
   .hero-buttons {
     display: flex !important;
     flex-direction: column !important;

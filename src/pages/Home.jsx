@@ -101,7 +101,6 @@ export default function Home() {
           </div>
 
           <div className="stats-container">
-            {/* 🌟 YAHAN ANIMATION DELAY ADD KIYA HAI 🌟 */}
             <div className="stat-card animate-slide-up delay-1">
               <div className="stat-header">
                 <h4>TOTAL REPORTS</h4>

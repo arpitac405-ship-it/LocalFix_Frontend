@@ -106,7 +106,7 @@ export default function Profile() {
           <div className="complaints-grid">
             {Array.isArray(myComplaints) && myComplaints.length === 0 ? (
               
-              /* 🌟 NAYA EMPTY STATE DESIGN 🌟 */
+            
               <div className="empty-state">
                 <div className="empty-state-icon">📝</div>
                 <h3>No complaints yet</h3>
