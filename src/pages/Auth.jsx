@@ -46,7 +46,7 @@ export default function Auth() {
       }
     } catch (error) {
       console.error("Server Error:", error);
-      alert("Error: Backend server se connect nahi ho pa raha hai. Ya toh server band hai ya database connect nahi hua.");
+      alert("Connection error. Please try again.");
     }
   }
 
@@ -72,7 +72,7 @@ export default function Auth() {
 
       if (response.ok) {
         localStorage.setItem('civicfix_user', JSON.stringify(data.user));
-        // ⚠️ NAYI LINE: Token yahan save hoga
+  
         localStorage.setItem('token', data.token);
         navigate('/profile');
       } else {
@@ -80,7 +80,7 @@ export default function Auth() {
       }
     } catch (error) {
       console.error("Server Error:", error);
-      alert("Error: Backend server se connect nahi ho pa raha hai.");
+      alert("Connection error. Please try again.");
     }
   }
 
