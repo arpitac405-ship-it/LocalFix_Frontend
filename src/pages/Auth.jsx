@@ -7,6 +7,7 @@ export default function Auth() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -47,6 +48,8 @@ export default function Auth() {
     } catch (error) {
       console.error("Server Error:", error);
       alert("Connection error. Please try again.");
+    } finally {
+      setIsLoading(false); 
     }
   }
 
@@ -81,6 +84,8 @@ export default function Auth() {
     } catch (error) {
       console.error("Server Error:", error);
       alert("Connection error. Please try again.");
+    } finally {
+      setIsLoading(false); 
     }
   }
 
@@ -135,7 +140,7 @@ export default function Auth() {
             <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
           </div>
           <button type="submit" className="btn-auth-submit">
-            {isLogin ? 'Sign in' : 'Create account'}
+            {isLoading ? 'Please wait...' : (isLogin ? 'Sign in' : 'Create account')}
           </button>
         </form>
 

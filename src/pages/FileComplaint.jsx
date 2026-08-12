@@ -10,6 +10,8 @@ export default function FileComplaint() {
   
   const [imageFile, setImageFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  
+  const [isLoading, setIsLoading] = useState(false); 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -28,6 +30,8 @@ export default function FileComplaint() {
       alert("Please login first to file a complaint!");
       return;
     }
+
+    setIsLoading(true); 
 
     const formData = new FormData();
     formData.append('category', category);
@@ -62,7 +66,9 @@ export default function FileComplaint() {
       
     } catch (error) {
       console.error("Server error:", error);
-      alert("Server error. Please check your backend.");
+      alert("Unable to submit complaint. Please try again later.");
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -140,8 +146,9 @@ export default function FileComplaint() {
               </div>
             </div>
 
-            <button type="submit" className="btn-submit-complaint">
-              Submit Report
+            
+            <button type="submit" className="btn-submit-complaint" disabled={isLoading}>
+              {isLoading ? 'Submitting...' : 'Submit Report'}
             </button>
           </form>
 
