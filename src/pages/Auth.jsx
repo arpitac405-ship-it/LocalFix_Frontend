@@ -19,6 +19,7 @@ export default function Auth() {
 
   // POST request (Register)
   async function registerUser() {
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://localfix-backend-tbuf.onrender.com/register", 
@@ -55,6 +56,7 @@ export default function Auth() {
 
   // POST request Login
   async function loginUser() {
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://localfix-backend-tbuf.onrender.com/login",
